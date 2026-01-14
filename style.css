@@ -52,3 +52,35 @@ p { color: #666; margin-bottom: 30px; }
 }
 
 .menu-btn .text { font-size: 1.1em; }
+
+.footer-line {
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin: 30px 0 20px 0;
+}
+
+.footer {
+    text-align: center;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.footer p {
+    margin: 5px 0; /* Μειώνει το κενό ανάμεσα στις γραμμές του footer */
+}
+
+.footer .cookies {
+    font-size: 0.8em;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+.footer a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
