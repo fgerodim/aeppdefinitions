@@ -1,74 +1,39 @@
 <!DOCTYPE html>
 <html lang="el">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Σωστό/Λάθος για το μάθημα ΑΕΠΠ</title>
-    <link rel="stylesheet" href="style.css">
-    <script type="application/ld+json">
-        {
-        "@context": "https://schema.org",
-        "@type": "LearningResource",
-        "name": "Quiz για το μάθμα "Ανάπτυξης Εφαρμογών σε Προγραμματιστικό Περιβάλλον": Σωστό/Λάθος",
-        "description": "Δοκιμάστε τις γνώσεις σας σε ερωτήσεις τύπου Σωστό/Λάθος στο πανελλαδικώς εξεταζόμενο μάθημα της Αναπτυξης Εφαρμογών σε Προγραμματιστικό Περιβάλλον (ΑΕΠΠ).",
-        "learningResourceType": "Quiz",
-        "educationalLevel": "Δευτεροβάθμια/Πανελλαδικές Εξετάσεις",
-        "about": {
-            "@type": "Thing",
-            "name": "Πληροφορική, ΑΕΠΠ, Δομές Δεδομένων, Πίνακες, Αλγόριθμοι, Προγραμματισμός"
-        },
-        "keywords": ["πληροφορική", "αλγόριθμοι", "προγραμματισμός", "quiz", "σωστό λάθος", "ΓΛΩΣΣΑ", "ΑΕΠΠ", "Πανελλαδικές"],
-        "author": {
-            "@type": "Person",
-            "name": "Φάνης Γεροδήμος-ΠΕ86"
-        }
-        }
-    </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Σωστό / Λάθος</title>
+<link rel="stylesheet" href="style.css">
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-0NWXRRP8PH"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-0NWXRRP8PH');
-</script>
 <body>
-    <div id="quiz-container">
-        
-        <div id="splash-screen">
-            <h1>Quiz για το μάθημα ΑΕΠΠ τύπου Σωστό/Λάθος</h1>
-            <p><strong>Δοκίμασε τις γνώσεις σου!</strong></p>
-            <p>Kουίζ τύπου ΣΩΣΤΟ/ΛΑΘΟΣ για το μάθημα Ανάπτυξης Εφαρμογών σε Προγραμματιστικό Περιβάλλον</p>
-            <button id="start-btn" class="main-btn">🚀 Έναρξη</button>
-            <button id="exit-btn" class="main-btn">🏠 Αρχική</button>
-        </div>
 
-        <div id="quiz-content" style="display:none;">
-            <h1>❓ Ερωτήσεις τύπου Σωστό/Λάθος</h1>
-            <p id="score-text">Σκορ: 0 / 0</p>
-            <div id="progress-container">
-                <div id="progress-bar"></div>
-            </div>
-            <p id="question-text">Φόρτωση ερωτήσεων... παρακαλώ περιμένετε.</p>
-           
-            <div id="buttons-container">
-                <button id="true-btn">Σωστό</button>
-                <button id="false-btn">Λάθος</button>
-            </div>
+<div id="quiz-container">
 
-            <p id="feedback-text"></p>
-            <button id="next-btn" style="display: none;">Επόμενη Ερώτηση </button>
-        </div>
-        
-        <footer id="app-footer">
-            <p>Δημιουργός: Φάνης Γεροδήμος-ΠΕ86</p>
-            <p>Επικοινωνία: <a href="mailto:fgerodim@gmail.com">fgerodim@gmail.com</a></p>
-            <p style="font-size:0.7em; margin-top: 5px;">*Χρησιμοποιούνται ανώνυμα cookies ανάλυσης για τη μέτρηση επισκεψιμότητας.</p>
-        </footer>
+    <h1>Quiz Σωστό / Λάθος</h1>
+
+    <p id="score-text">Ερώτηση 0 / 0</p>
+
+    <div id="progress-container">
+        <div id="progress-bar"></div>
     </div>
 
-    <script src="script.js"></script>
+    <p id="question-text">Φόρτωση ερωτήσεων...</p>
+
+    <div id="buttons-container">
+        <button id="true-btn">Σωστό</button>
+        <button id="false-btn">Λάθος</button>
+    </div>
+
+    <p id="feedback-text"></p>
+
+    <div id="report-buttons">
+        <button id="restart-btn">🔄 Επανέναρξη</button>
+        <button id="home-btn">🏠 Αρχική</button>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>

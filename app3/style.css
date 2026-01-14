@@ -1,302 +1,120 @@
 body {
     font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    background-color: #f4f4f9; /* Απαλό φόντο */
+    background:#f4f4f9;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    margin:0;
 }
 
 #quiz-container {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Πιο έντονη σκιά */
-    text-align: center;
-    width: 90%;
-    max-width: 550px; /* Λίγο πιο φαρδύ container */
+    background:#fff;
+    padding:30px;
+    border-radius:15px;
+    width:90%;
+    max-width:550px;
+    text-align:center;
+    box-shadow:0 4px 12px rgba(0,0,0,0.15);
 }
 
-h1 {
-    color: #007bff;
-    margin-bottom: 25px;
-    font-size: 1.8em;
-}
+h1 { color:#007bff; }
 
-/* Μεγαλύτερη γραμματοσειρά ερώτησης */
 #question-text {
-    font-size: 1.5em; 
-    margin-bottom: 30px;
-    color: #333;
-    min-height: 50px; 
-    font-weight: 500;
+    font-size:1.4em;
+    min-height:60px;
+    margin:25px 0;
 }
+
 #buttons-container {
-    /* 🌟 ΝΕΟ: Ενεργοποίηση Flexbox */
-    display: flex;
-    /* 🌟 ΝΕΟ: Κεντράρισμα των στοιχείων οριζόντια */
-    justify-content: center;
-    /* 🌟 ΝΕΟ: Προσθήκη κενού μεταξύ των κουμπιών (προαιρετικό) */
-    gap: 20px; 
-    
-    margin-top: 20px;
-    margin-bottom: 20px;
+    display:flex;
+    justify-content:center;
+    gap:20px;
 }
 
-/* Κουμπιά Απάντησης (Σωστό/Λάθος) */
 #buttons-container button {
-    padding: 15px 30px;
-    margin: 8px;
-    font-size: 1.2em; 
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    font-weight: bold;
-    min-width: 150px;
-    min-height: 55px;
+    padding:15px 30px;
+    font-size:1.1em;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+    min-width:130px;
 }
 
-#true-btn {
-    background-color: #4CAF50; /* Πράσινο */
-    color: white;
+#true-btn { background:#4CAF50; color:white; }
+#false-btn { background:#f44336; color:white; }
+
+.selected {
+    opacity:0.7;
+    transform:scale(0.97);
 }
 
-#false-btn {
-    background-color: #f44336; /* Κόκκινο */
-    color: white;
-}
-
-#true-btn:hover { background-color: #45a049; }
-#false-btn:hover { background-color: #da342a; }
-
-/* Feedback Απάντησης */
 #feedback-text {
-    margin-top: 20px;
-    font-weight: bold;
-    min-height: 20px;
-    font-size: 1.2em; 
+    margin-top:15px;
+    font-weight:bold;
+    min-height:24px;
 }
 
-/* ➡️ ΚΟΥΜΠΙ "ΕΠΟΜΕΝΗ ΕΡΩΤΗΣΗ" (Κεντραρισμένο με Ωραίο Βέλος) */
-#next-btn {
-    display: inline-block; 
-    
-    background-color: #007bff;
-    color: white;
-    
-    padding: 12px 30px; 
-    
-    margin-top: 25px;
-    border: none;
-    border-radius: 25px; /* Πιο στρογγυλεμένες γωνίες */
-    cursor: pointer;
-    font-size: 1.1em;
-    font-weight: bold;
-    transition: background-color 0.3s, transform 0.2s;
-    
-    position: relative; 
-    padding-right: 50px; /* Δίνει χώρο για το εικονίδιο του βέλους */
-}
+.correct { color:#4CAF50; }
+.incorrect { color:#f44336; }
 
-#next-btn:hover {
-    background-color: #0056b3;
-    transform: translateY(-2px); /* Εφέ "ανύψωσης" */
-}
-
-/* ➔ ΠΡΟΣΘΗΚΗ ΤΟΥ ΒΕΛΟΥΣ */
-#next-btn::after {
-    content: '➔'; 
-    position: absolute;
-    right: 18px; 
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1.2em;
-    line-height: 1;
-}
-
-/* Στυλ για σωστή/λανθασμένη απάντηση */
-.correct {
-    color: #4CAF50; /* Πράσινο για Σωστό */
-}
-
-.incorrect {
-    color: #f44336; /* Κόκκινο για Λάθος */
-}
-/* ΝΕΟ: Στυλ για το επιλεγμένο κουμπί (ανεξάρτητα αν είναι σωστό ή λάθος) */
-#buttons-container button.selected {
-    /* Εδώ βάζουμε το στυλ που θέλουμε να έχει το κουμπί όταν είναι πατημένο. */
-    opacity: 0.8; 
-    transform: scale(0.98); /* Ελαφριά σμίκρυνση */
-    box-shadow: none; /* Αφαίρεση σκιάς */
-    border: 3px solid #333; /* Προσθήκη ενός περιγράμματος */
-}
-#app-footer {
-    display: none; /* 🛑 ΝΕΟ: Κρύβει το footer στην αρχή */
-    
-    margin-top: 40px; 
-    padding-top: 15px;
-    border-top: 1px solid #ccc; 
-    font-size: 0.85em;
-    color: #666;
-    text-align: center;
-}
-
-#app-footer p {
-    margin: 5px 0;
-}
-
-#app-footer a {
-    color: #007bff; 
-    text-decoration: none;
-    font-weight: bold;
-}
-
-#app-footer a:hover {
-    text-decoration: underline; 
-}
-/* 📝 Στυλ για το Αναλυτικό Report */
-.report-list {
-    list-style: none;
-    padding: 0;
-    text-align: left;
-    margin-top: 15px;
-}
-
-/* ⬇️ ΝΕΟ: Μικρότερη γραμματοσειρά για τα στοιχεία της λίστας (ερωτήσεις/απαντήσεις) */
-.report-list li {
-    padding: 12px; /* Μικρότερο padding */
-    margin-bottom: 8px;
-    border-radius: 8px;
-    line-height: 1.3;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-    font-size: 0.8em; /* Μείωση μεγέθους γραμμάτων */
-}
-
-.report-list li strong {
-    display: inline; /* Επαναφορά σε inline */
-    font-size: 1em;
-    font-weight: bold;
-}
-
-/* ⬇️ ΝΕΟ: Μείωση μεγέθους για τον τίτλο 'Συνοπτικό Σκορ' (h2) */
-#quiz-container h2 {
-    color: #007bff;
-    margin-top: 0;
-    font-size: 1.4em; 
-}
-
-/* ⬇️ ΝΕΟ: Στυλ για τον τίτλο 'Αναλυτική Επισκόπηση Απαντήσεων' (h4) */
-#quiz-container h4 {
-    color: #555;
-    margin-top: 15px;
-    margin-bottom: 10px;
-    font-size: 1.1em; /* Πολύ μικρό μέγεθος */
-    font-weight: 600;
-}
-
-/* Στυλ για Σωστές/Λάθος γραμμές στο Report */
-.report-correct {
-    background-color: #e6ffe6;
-    border-left: 5px solid #4CAF50;
-}
-
-.report-incorrect {
-    background-color: #ffe6e6;
-    border-left: 5px solid #f44336;
-}
-
-/* Υπόλοιπα στυλ (hr) */
-#quiz-container hr {
-    border: 0;
-    height: 1px;
-    background-color: #ccc;
-    margin: 20px 0;
-}
-/* ΝΕΑ ΣΤΥΛ ΓΙΑ ΤΗΝ ΑΡΧΙΚΗ ΟΘΟΝΗ (SPLASH SCREEN) */
-#splash-screen {
-    padding: 10px;
-    margin-bottom: 20px;
-}
-
-#splash-screen h1 {
-    color: #007bff;
-    margin-bottom: 15px;
-    font-size: 1.8em;
-}
-
-#splash-screen p {
-    margin-bottom: 25px;
-    line-height: 1.6;
-    font-size: 1.1em;
-}
-
-/* Κοινό στυλ για τα κουμπιά της αρχικής σελίδας */
-.main-btn {
-    padding: 12px 25px;
-    font-size: 1.1em;
-    margin: 10px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.1s;
-    font-weight: bold;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-#start-btn {
-    background-color: #28a745; /* Πράσινο */
-    color: white;
-}
-
-#start-btn:hover {
-    background-color: #218838;
-    transform: translateY(-2px);
-}
-
-#exit-btn {
-    background-color: #6c757d; /* Γκρι */
-    color: white;
-}
-
-#exit-btn:hover {
-    background-color: #5a6268;
-    transform: translateY(-2px);
-}
 #progress-container {
-    width: 100%;
-    background-color: #e0e0e0;
-    border-radius: 10px;
-    margin-bottom: 20px; /* Κενό κάτω από τη μπάρα */
-    height: 12px;
-    overflow: hidden; /* Κρύβει το overflow της μπάρας */
+    width:100%;
+    height:10px;
+    background:#ddd;
+    border-radius:10px;
+    overflow:hidden;
+    margin-bottom:15px;
 }
 
 #progress-bar {
-    height: 100%;
-    width: 0%; /* Ξεκινάει από το 0% */
-    background-color: #007bff; /* Μπλε χρώμα */
-    border-radius: 10px;
-    transition: width 0.5s ease-in-out; /* Ομαλή μετάβαση κατά την ενημέρωση */
-}
-/* Flash effect για σωστό / λάθος (θα εφαρμοστεί στο #quiz-container) */
-#quiz-container.flash-correct {
-    animation: flash-correct 600ms ease-in-out;
-}
-#quiz-container.flash-incorrect {
-    animation: flash-incorrect 600ms ease-in-out;
+    height:100%;
+    width:0%;
+    background:#007bff;
+    transition:width 0.4s;
 }
 
-/* Ορίζουμε τα keyframes ώστε να μην αλλοιώνεται μόνιμα το background */
-@keyframes flash-correct {
-    0%   { box-shadow: 0 0 0 rgba(0,0,0,0); transform: scale(1); }
-    10%  { background-color: #e6ffea; transform: scale(1.01); }
-    100% { background-color: #fff; transform: scale(1); }
+#report-buttons {
+    display:none;
+    justify-content:center;
+    gap:20px;
+    margin-top:25px;
 }
 
-@keyframes flash-incorrect {
-    0%   { box-shadow: 0 0 0 rgba(0,0,0,0); transform: scale(1); }
-    10%  { background-color: #ffe6e6; transform: scale(1.01); }
-    100% { background-color: #fff; transform: scale(1); }
+#report-buttons button {
+    padding:12px 28px;
+    border:none;
+    border-radius:25px;
+    font-size:1.05em;
+    font-weight:bold;
+    cursor:pointer;
+    color:white;
+}
+
+#restart-btn { background:#007bff; }
+#home-btn { background:#6c757d; }
+
+.report-list {
+    text-align:left;
+    padding:0;
+    list-style:none;
+    margin-top:20px;
+}
+
+.report-list li {
+    padding:10px;
+    margin-bottom:8px;
+    border-radius:6px;
+    font-size:0.9em;
+}
+
+.report-correct {
+    background:#e6ffe6;
+    border-left:4px solid #4CAF50;
+}
+
+.report-incorrect {
+    background:#ffe6e6;
+    border-left:4px solid #f44336;
 }
