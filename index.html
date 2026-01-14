@@ -1,23 +1,31 @@
 <!DOCTYPE html>
 <html lang="el">
 <head>
-<meta charset="UTF-8">
-<title>Quiz Αντιστοίχισης</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Εκπαιδευτικές Ασκήσεις ΑΕΠΠ</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-<div id="quiz-container">
-    <h1>🧩 Αντιστοίχισε τους όρους</h1>
-    <p class="subtitle">Διάλεξε τον σωστό ορισμό για κάθε όρο</p>
-
-    <div id="questions"></div>
-
-    <button id="check-btn">✔ Έλεγχος</button>
-    <div id="result"></div>
-</div>
-
-<script src="script.js"></script>
+    <div class="menu-container">
+        <h1>Επιλογή Άσκησης</h1>
+        <p>Διάλεξε τον τύπο της άσκησης που θέλεις να λύσεις:</p>
+        
+        <div class="button-grid">
+            <a href="app2/index.html" class="menu-btn">
+                <span class="icon">🎴</span>
+                <span class="text">Αντιστοίχιση με Κάρτες</span>
+            </a>
+            
+            <a href="app1/index.html" class="menu-btn">
+                <span class="icon">📑</span>
+                <span class="text">Αντιστοίχιση με Λίστα (Dropdown)</span>
+            </a>
+            <a href="app3/index.html" class="menu-btn">
+                <span class="icon">⚖️</span>
+                <span class="text">Σωστό ή Λάθος;</span>
+            </a>
+        </div>
+    </div>
 </body>
 </html>

@@ -1,94 +1,54 @@
 body {
-    font-family: Arial, sans-serif;
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f0f2f5;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    margin: 0;
-    background-color: #f4f4f9;
 }
 
-#quiz-container {
-    background-color: #fff;
-    padding: 28px;
-    border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    width: 90%;
-    max-width: 520px;
+.menu-container {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     text-align: center;
+    max-width: 500px;
+    width: 90%;
 }
 
-h1 {
-    color: #007bff;
-    margin-bottom: 10px;
-    font-size: 1.8em;
+h1 { color: #007bff; margin-bottom: 10px; }
+p { color: #666; margin-bottom: 30px; }
+
+.button-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-.subtitle {
-    color: #555;
-    margin-bottom: 25px;
-    font-size: 1.05em;
-}
-
-/* Κάρτα ερώτησης */
-.question {
-    background: #f9fafc;
-    padding: 15px;
+.menu-btn {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background: #f8f9fa;
+    border: 2px solid #e9ecef;
     border-radius: 12px;
-    margin-bottom: 15px;
-    text-align: left;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
-}
-
-.question label {
+    text-decoration: none;
+    color: #333;
     font-weight: bold;
-    display: block;
-    margin-bottom: 8px;
-    font-size: 1.05em;
+    transition: 0.3s;
 }
 
-/* Dropdown */
-select {
-    width: 100%;
-    padding: 12px;
-    font-size: 1em;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    background-color: #fff;
+.menu-btn:hover {
+    border-color: #007bff;
+    background: #eaf2ff;
+    transform: translateY(-3px);
 }
 
-/* Feedback */
-.question.correct {
-    border-left: 6px solid #4CAF50;
-    background-color: #e6ffea;
+.menu-btn .icon {
+    font-size: 2em;
+    margin-right: 15px;
 }
 
-.question.incorrect {
-    border-left: 6px solid #f44336;
-    background-color: #ffe6e6;
-}
-
-/* Κουμπί */
-#check-btn {
-    margin-top: 25px;
-    padding: 14px 30px;
-    font-size: 1.1em;
-    font-weight: bold;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-}
-
-#check-btn:hover {
-    background-color: #0056b3;
-    transform: translateY(-2px);
-}
-
-#result {
-    margin-top: 20px;
-    font-size: 1.3em;
-    font-weight: bold;
-}
+.menu-btn .text { font-size: 1.1em; }

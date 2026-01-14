@@ -1,0 +1,100 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f4f4f9;
+}
+
+#quiz-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+}
+
+h1 { color: #007bff; margin-bottom: 10px; }
+.subtitle { color: #666; margin-bottom: 25px; }
+
+/* Ερωτήσεις */
+.question {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    text-align: left;
+    border: 2px solid #eef0f2;
+    transition: 0.3s;
+}
+
+.question label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 0.95em;
+}
+
+/* Χρώματα Ελέγχου */
+.question.correct { border-color: #28a745; background-color: #d4edda; }
+.question.incorrect { border-color: #dc3545; background-color: #f8d7da; }
+
+/* Κουμπιά */
+#check-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1em;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+#check-btn:hover { background-color: #0056b3; }
+
+#result {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin: 20px 0;
+    color: #333;
+}
+
+/* Περιοχή κουμπιών τέλους */
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.btn-home, #retry-btn {
+    padding: 12px 20px;
+    border-radius: 10px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.btn-home { background-color: #6c757d; color: white; }
+#retry-btn { background-color: #28a745; color: white; }
+
+.btn-home:hover, #retry-btn:hover { opacity: 0.9; transform: translateY(-2px); }
