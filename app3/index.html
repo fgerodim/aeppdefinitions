@@ -1,39 +1,33 @@
 <!DOCTYPE html>
 <html lang="el">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Quiz Σωστό / Λάθος</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Σωστό/Λάθος - ΑΕΠΠ</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="quiz-container">
+        <h1>❓ Quiz Σωστό/Λάθος</h1>
+        <p id="score-text">Σκορ: 0 / 0</p>
+        <div id="progress-container">
+            <div id="progress-bar"></div>
+        </div>
+        <p id="question-text">Φόρτωση ερωτήσεων...</p>
 
-<div id="quiz-container">
+        <div id="buttons-container">
+            <button id="true-btn">Σωστό</button>
+            <button id="false-btn">Λάθος</button>
+        </div>
 
-    <h1>Quiz Σωστό / Λάθος</h1>
+        <p id="feedback-text"></p>
 
-    <p id="score-text">Ερώτηση 0 / 0</p>
-
-    <div id="progress-container">
-        <div id="progress-bar"></div>
+        <div id="report-buttons" style="display:none;">
+            <button id="restart-btn">🔄 Επανέναρξη</button>
+            <button id="home-btn">🏠 Επιστροφή</button>
+        </div>
     </div>
 
-    <p id="question-text">Φόρτωση ερωτήσεων...</p>
-
-    <div id="buttons-container">
-        <button id="true-btn">Σωστό</button>
-        <button id="false-btn">Λάθος</button>
-    </div>
-
-    <p id="feedback-text"></p>
-
-    <div id="report-buttons">
-        <button id="restart-btn">🔄 Επανέναρξη</button>
-        <button id="home-btn">🏠 Αρχική</button>
-    </div>
-
-</div>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
