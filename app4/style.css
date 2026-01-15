@@ -1,0 +1,104 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f4f4f9;
+}
+
+#quiz-container {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+    transition: background-color 0.3s ease;
+}
+
+h1 { color: #007bff; margin-top: 0; }
+
+#progress-container {
+    width: 100%;
+    background: #e0e0e0;
+    height: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+#progress-bar {
+    height: 100%;
+    width: 0%;
+    background: #007bff;
+    transition: width 0.1s linear;
+}
+
+#code-display {
+    background: #282c34;
+    color: #abb2bf;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+    font-family: Consolas, monospace;
+    font-size: 1.1em;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    border-left: 5px solid #007bff;
+}
+
+.instruction { font-weight: bold; color: #444; }
+
+#user-input {
+    padding: 12px;
+    font-size: 1.2em;
+    width: 80%;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#action-area {
+    min-height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#check-btn {
+    padding: 15px 40px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#report-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.menu-btn {
+    padding: 12px 25px;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-btn.secondary { background: #6c757d; }
+
+#answer-reveal { padding: 15px; }
