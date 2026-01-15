@@ -163,7 +163,10 @@ function validate(fromButton = false, isTimeout = false) {
 checkBtn.onclick = () => validate(false);
 userInput.onkeyup = e => { if (e.key === 'Enter') validate(false); };
 document.getElementById('retry-btn').onclick = startNewExercise;
-
+// Στο αρχείο JS, πριν από το loadCSV()
+document.addEventListener('click', () => { 
+    if(!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+}, { once: true });
 // ================================
 // INIT
 // ================================
