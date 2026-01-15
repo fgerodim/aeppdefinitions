@@ -18,15 +18,22 @@ body{
   text-align:center;
 }
 
-h1{ color:#007bff; margin-bottom:5px; }
+h1{ 
+  color:#007bff; 
+  margin-bottom:5px; 
+}
 
-#progress{ margin:10px 0 20px; font-weight:bold; color:#555; }
+#progress{ 
+  margin:10px 0 20px; 
+  font-weight:bold; 
+  color:#555; 
+}
 
 .grid{
   display:grid;
   grid-template-columns: 1fr 1fr;
   gap: 15px;
-  align-items: stretch; /* Κάνει όλες τις κάρτες στην ίδια σειρά να έχουν το ίδιο ύψος */
+  align-items: stretch; 
 }
 
 .column {
@@ -47,7 +54,7 @@ h1{ color:#007bff; margin-bottom:5px; }
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 80px; /* Ελάχιστο ύψος για να μη μετακινούνται τα στοιχεία */
+  min-height: 80px; 
   word-wrap: break-word;
   font-size: 0.95em;
 }
@@ -71,16 +78,32 @@ h1{ color:#007bff; margin-bottom:5px; }
   gap: 10px;
 }
 
+/* ===== Κουμπιά ίδια μορφή με πρώτο quiz & μεγαλύτερα ===== */
 #nextBtn, .btn-home {
-  padding: 12px 20px;
-  border-radius: 8px;
-  border: none;
+  padding: 14px 24px;       /* μεγαλύτερο padding */
+  border-radius: 10px;      /* πιο στρογγυλεμένες γωνίες */
   font-weight: bold;
   cursor: pointer;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 16px;          /* μεγαλύτερο κείμενο */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;                 /* χώρος για emoji */
+  border: none;
+  transition: background 0.2s, opacity 0.2s;
 }
 
-#nextBtn { background: #007bff; color: #fff; }
-.btn-home { background: #6c757d; color: #fff; }
-#nextBtn:hover, .btn-home:hover { opacity: 0.9; }
+#nextBtn {
+  background: #28a745;  /* πράσινο όπως Επανέναρξη */
+  color: #fff;
+}
+
+#nextBtn:hover { opacity: 0.85; }
+
+.btn-home {
+  background: #17a2b8; /* μπλε όπως Επιστροφή */
+  color: #fff;
+}
+
+.btn-home:hover { opacity: 0.85; }

@@ -21,7 +21,7 @@ let currentQuestionIndex = 0;
 let isAnswered = false;
 let score = 0;
 let answersLog = [];
-const NUMBER_OF_QUIZ_QUESTIONS = 3;
+const NUMBER_OF_QUIZ_QUESTIONS = 2;
 
 // ================================
 // AUDIO
@@ -149,6 +149,14 @@ feedbackText.className = '';
     reportButtons.style.display = 'flex';
 
     const percent = Math.round((score / questions.length) * 100);
+    if (percent === 100 && typeof confetti === 'function') {
+    confetti({
+        particleCount: 150,
+        spread: 70,
+        origin: { y: 0.6 },
+        colors: ['#007bff', '#4CAF50', '#ffffff']
+    });
+}
     const overallComment = getOverallComment(percent);
 
     let html = `

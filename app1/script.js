@@ -114,6 +114,13 @@ CHECK_BTN.onclick = () => {
     });
 
     RESULT_DIV.textContent = `Σκορ: ${score} / ${NUMBER_OF_QUESTIONS}`;
+    if (score === NUMBER_OF_QUESTIONS && typeof confetti === 'function') {
+    confetti({
+        particleCount: 150,
+        spread: 100,
+        origin: { y: 0.6 }
+    });
+}
     CHECK_BTN.style.display = "none";
     RESULT_AREA.style.display = "block";
 };
