@@ -69,6 +69,13 @@ function updateHeader(){
     scoreText.textContent=`Ερώτηση ${currentQuestionIndex+1} / ${questions.length}`;
     progressBar.style.width=`${(currentQuestionIndex/questions.length)*100}%`;
 }
+function getOverallComment(percent){
+    if(percent === 100) return "🏆 Άριστα! Τέλεια επίδοση!";
+    if(percent >= 70) return "🎉 Πολύ καλή δουλειά!";
+    if(percent >= 40) return "🙂 Καλή προσπάθεια, μπορείς και καλύτερα.";
+    return "📚 Χρειάζεται περισσότερη εξάσκηση. Μην τα παρατάς!";
+}
+
 
 // ================================
 // LOAD QUIZ
@@ -136,16 +143,43 @@ function checkAnswer(userAnswer){
 // REPORT
 // ================================
 function showReport(){
-    buttonsContainer.style.display='none';
-    reportButtons.style.display='flex';
-    const percent=Math.round((score/questions.length)*100);
-    let html=`<h2>Σκορ: ${percent}%</h2><ul class="report-list">`;
-    answersLog.forEach((log,i)=>{
-        html+=`<li class="${log.isCorrect?'report-correct':'report-incorrect'}">${i+1}. ${log.question}<br>${log.isCorrect?'✅ Σωστό':`❌ Απάντησες: ${log.userAnswer?'Σωστό':'Λάθος'} | Σωστό: ${log.correct?'Σωστό':'Λάθος'}`}</li>`;
-    });
-    html+='</ul>'; questionText.innerHTML=html;
-    scoreText.textContent=''; progressBar.style.width='100%';
+    feedbackText.textContent = '';
+feedbackText.className = '';
+    buttonsContainer.style.display = 'none';
+    reportButtons.style.display = 'flex';
+
+    const percent = Math.round((score / questions.length) * 100);
+    const overallComment = getOverallComment(percent);
+
+    let html = `
+        <h2>Σκορ: ${percent}%</h2>
+        <p class="overall-comment">${overallComment}</p>
+        <ul class="report-list">
+    `;
+
+    answersLog.forEach((log, i) => {
+
+    const userAnswerText = log.userAnswer ? 'Σωστό' : 'Λάθος';
+    const correctAnswerText = log.correct ? 'Σωστό' : 'Λάθος';
+
+    html += `
+        <li class="${log.isCorrect ? 'report-correct' : 'report-incorrect'}">
+            ${i + 1}. ${log.question}<br>
+            ${log.isCorrect ? '✅' : '❌'} 
+            Απάντησες: <strong>${userAnswerText}</strong> — 
+            Η απάντηση είναι: <strong>${correctAnswerText}</strong>
+        </li>
+    `;
+});
+
+
+    html += '</ul>';
+
+    questionText.innerHTML = html;
+    scoreText.textContent = '';
+    progressBar.style.width = '100%';
 }
+
 
 // ================================
 // EVENTS
