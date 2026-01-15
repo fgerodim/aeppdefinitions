@@ -21,7 +21,7 @@ let currentQuestionIndex = 0;
 let isAnswered = false;
 let score = 0;
 let answersLog = [];
-const NUMBER_OF_QUIZ_QUESTIONS = 2;
+const NUMBER_OF_QUIZ_QUESTIONS = 10;
 
 // ================================
 // AUDIO
