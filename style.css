@@ -1,5 +1,4 @@
 /* ====== PAGE ====== */
-
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
     display: flex;
@@ -11,20 +10,19 @@ body {
 }
 
 /* ====== CONTAINER ====== */
-
 .app {
     background: white;
     padding: 30px;
     border-radius: 20px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     text-align: center;
-    width: 90%;
+    width: 95%;
     max-width: 650px;
     transition: background-color 0.3s ease;
+    box-sizing: border-box;
 }
 
 /* ====== HEADERS ====== */
-
 h1 { 
     color: #007bff; 
     margin-top: 0; 
@@ -42,7 +40,6 @@ h1 {
 }
 
 /* ====== CODE WINDOW ====== */
-
 .code-window {
     background: #282c34;
     color: #abb2bf;
@@ -54,7 +51,7 @@ h1 {
     line-height: 1.5;
     margin-bottom: 20px;
     border-left: 5px solid #007bff;
-    overflow: hidden;
+    overflow-x: auto; /* horizontal scroll */
 }
 
 .code-header {
@@ -79,10 +76,10 @@ h1 {
 .code-content {
     padding: 20px;
     white-space: pre-wrap;
+    word-break: break-word; /* για να μην σπάει layout */
 }
 
 /* ====== INPUT GAPS ====== */
-
 .gap {
     background: #21252b;
     border: 1px solid #555;
@@ -95,6 +92,9 @@ h1 {
     text-align: center;
     border-radius: 5px;
     outline: none;
+    display: inline-block;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .gap.correct {
@@ -113,7 +113,6 @@ h1 {
 }
 
 /* ====== BUTTONS ====== */
-
 .buttons {
     min-height: 80px;
     display: flex;
@@ -145,7 +144,6 @@ button:hover {
     margin: 0 8px;
 }
 
-
 .menu-secondary {
     background: #6c757d;
 }
@@ -155,7 +153,6 @@ button:hover {
 }
 
 /* ====== FEEDBACK / SCORE ====== */
-
 #feedback {
     margin-top: 12px;
     font-weight: bold;
@@ -172,7 +169,6 @@ button:hover {
 }
 
 /* ====== SOLUTION ====== */
-
 #solution-box {
     padding: 15px;
     margin-top: 15px;
@@ -186,19 +182,37 @@ button:hover {
     white-space: pre-wrap;
 }
 
-/* ====== MOBILE ====== */
-
+/* ====== MOBILE RESPONSIVE ====== */
 @media (max-width: 600px) {
     .app {
         padding: 22px;
+    }
+
+    .code-content {
+        padding: 12px;
+        font-size: 0.95em;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .buttons {
+        gap: 12px;
     }
 
     button {
         width: 100%;
         padding: 14px;
     }
+}
 
+@media (max-width: 400px) {
     .buttons {
-        gap: 12px;
+        flex-direction: column;
+    }
+
+    .code-content {
+        font-size: 0.9em;
     }
 }
