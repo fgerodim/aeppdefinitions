@@ -1,72 +1,40 @@
 <!DOCTYPE html>
 <html lang="el">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Εκπαιδευτικές Ασκήσεις ΑΕΠΠ</title>
-    <link rel="stylesheet" href="style.css">
-    <script type="application/ld+json">
-        {
-        "@context": "https://schema.org",
-        "@type": "LearningResource",
-        "name": "Quiz για το μάθμα "Ανάπτυξης Εφαρμογών σε Προγραμματιστικό Περιβάλλον": Σωστό/Λάθος",
-        "description": "Δοκιμάστε τις γνώσεις σας σε ερωτήσεις τύπου Σωστό/Λάθος στο πανελλαδικώς εξεταζόμενο μάθημα της Αναπτυξης Εφαρμογών σε Προγραμματιστικό Περιβάλλον (ΑΕΠΠ).",
-        "learningResourceType": "Quiz",
-        "educationalLevel": "Δευτεροβάθμια/Πανελλαδικές Εξετάσεις",
-        "about": {
-            "@type": "Thing",
-            "name": "Πληροφορική, ΑΕΠΠ, Δομές Δεδομένων, Πίνακες, Αλγόριθμοι, Προγραμματισμός"
-        },
-        "keywords": ["πληροφορική", "αλγόριθμοι", "προγραμματισμός", "quiz", "σωστό λάθος", "ΓΛΩΣΣΑ", "ΑΕΠΠ", "Πανελλαδικές"],
-        "author": {
-            "@type": "Person",
-            "name": "Φάνης Γεροδήμος-ΠΕ86"
-        }
-        }
-    </script>
-    
-    
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Συμπλήρωση Κενών – ΑΕΠΠ</title>
+<link rel="stylesheet" href="style.css">
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-0NWXRRP8PH"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-0NWXRRP8PH');
-</script>
 <body>
-    <div class="menu-container">
-        <h1>Επιλογή Άσκησης</h1>
-        <p>Διάλεξε τον τύπο της άσκησης που θέλεις να λύσεις:</p>
-        
-        <div class="button-grid">
-            <a href="app2/index.html" class="menu-btn">
-                <span class="icon">🎴</span>
-                <span class="text">Αντιστοίχιση με Κάρτες</span>
-            </a>
-            
-            <a href="app1/index.html" class="menu-btn">
-                <span class="icon">📑</span>
-                <span class="text">Αντιστοίχιση με Λίστα</span>
-            </a>
-            <a href="app3/index.html" class="menu-btn">
-                <span class="icon">⚖️</span>
-                <span class="text">Σωστό ή Λάθος;</span>
-            </a>
-            <a href="app4/index.html" class="menu-btn new-app">
-                <span class="icon">🧠</span>
-                <span class="text">Ιχνηλάτηση Αλγορίθμου</span>
-            </a>
+
+<div class="app">
+
+    <h1>⌨️ Συμπλήρωση Κενών (ΑΕΠΠ)</h1>
+    <div id="progress">Άσκηση 1 / 1</div>
+
+    <h3 id="title">Φόρτωση...</h3>
+
+    <div class="code-window">
+        <div class="code-header">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="file-name">algorithm.glossa</span>
         </div>
-        <hr class="footer-line">
-<div class="footer">
-    <p class="creator">Δημιουργός: Φάνης Γεροδήμος-ΠΕ86</p>
-    <p class="contact">Επικοινωνία: <a href="mailto:fgerodim@gmail.com">fgerodim@gmail.com</a></p>
-    <p class="cookies">*Χρησιμοποιούνται ανώνυμα cookies ανάλυσης για τη μέτρηση επισκεψιμότητας.</p>
-</div>
+        <pre class="code-content" id="code"></pre>
     </div>
-    
+
+    <div class="buttons">
+        <button id="checkBtn">Έλεγχος</button>
+        <button id="nextBtn" style="display:none">Επόμενο</button>
+    </div>
+
+    <div id="feedback"></div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

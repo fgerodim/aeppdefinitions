@@ -1,86 +1,204 @@
+/* ====== PAGE ====== */
+
 body {
-    margin: 0;
     font-family: 'Segoe UI', Arial, sans-serif;
-    background: #f0f2f5;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    margin: 0;
+    background-color: #f4f4f9;
 }
 
-.menu-container {
+/* ====== CONTAINER ====== */
+
+.app {
     background: white;
-    padding: 40px;
+    padding: 30px;
     border-radius: 20px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     text-align: center;
-    max-width: 500px;
     width: 90%;
+    max-width: 650px;
+    transition: background-color 0.3s ease;
 }
 
-h1 { color: #007bff; margin-bottom: 10px; }
-p { color: #666; margin-bottom: 30px; }
+/* ====== HEADERS ====== */
 
-.button-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+h1 { 
+    color: #007bff; 
+    margin-top: 0; 
 }
 
-.menu-btn {
+#progress {
+    color: #666;
+    margin-bottom: 10px;
+    font-size: 0.95em;
+}
+
+#title {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* ====== CODE WINDOW ====== */
+
+.code-window {
+    background: #282c34;
+    color: #abb2bf;
+    padding: 0;
+    border-radius: 10px;
+    text-align: left;
+    font-family: Consolas, monospace;
+    font-size: 1.05em;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    border-left: 5px solid #007bff;
+    overflow: hidden;
+}
+
+.code-header {
+    background: #323844;
+    padding: 10px;
     display: flex;
     align-items: center;
+    gap: 6px;
+}
+
+.dot { width: 12px; height: 12px; border-radius: 50%; }
+.red { background: #ff5f56; }
+.yellow { background: #ffbd2e; }
+.green { background: #27c93f; }
+
+.file-name {
+    color: #aaa;
+    font-size: 12px;
+    margin-left: 10px;
+}
+
+.code-content {
     padding: 20px;
-    background: #f8f9fa;
-    border: 2px solid #e9ecef;
-    border-radius: 12px;
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    transition: 0.3s;
+    white-space: pre-wrap;
 }
 
-.menu-btn:hover {
-    border-color: #007bff;
-    background: #eaf2ff;
-    transform: translateY(-3px);
-}
+/* ====== INPUT GAPS ====== */
 
-.menu-btn .icon {
-    font-size: 2em;
-    margin-right: 15px;
-}
-
-.menu-btn .text { font-size: 1.1em; }
-
-.footer-line {
-    border: 0;
-    border-top: 1px solid #ddd;
-    margin: 30px 0 20px 0;
-}
-
-.footer {
+.gap {
+    background: #21252b;
+    border: 1px solid #555;
+    border-bottom: 2px solid #007bff;
+    color: #e5c07b;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 2px 6px;
+    margin: 0 4px;
     text-align: center;
-    font-size: 0.9em;
-    color: #555;
+    border-radius: 5px;
+    outline: none;
 }
 
-.footer p {
-    margin: 5px 0; /* Μειώνει το κενό ανάμεσα στις γραμμές του footer */
+.gap.correct {
+    background: #1f4033;
+    border-color: #4CAF50;
 }
 
-.footer .cookies {
-    font-size: 0.8em;
-    font-style: italic;
+.gap.wrong {
+    background: #4a1f25;
+    border-color: #f44336;
+}
+
+.gap.locked {
+    pointer-events: none;
+    opacity: 0.95;
+}
+
+/* ====== BUTTONS ====== */
+
+.buttons {
+    min-height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
     margin-top: 10px;
+    flex-wrap: wrap;
 }
 
-.footer a {
-    color: #007bff;
-    text-decoration: none;
+button {
+    padding: 15px 40px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.05em;
     font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
 }
 
-.footer a:hover {
-    text-decoration: underline;
+button:hover {
+    background: #0056b3;
+    transform: scale(0.97);
+}
+
+.buttons button {
+    margin: 0 8px;
+}
+
+
+.menu-secondary {
+    background: #6c757d;
+}
+
+.menu-secondary:hover {
+    background: #545b62;
+}
+
+/* ====== FEEDBACK / SCORE ====== */
+
+#feedback {
+    margin-top: 12px;
+    font-weight: bold;
+    min-height: 24px;
+}
+
+.success { color: #4CAF50; }
+.error { color: #f44336; }
+
+#score {
+    margin-top: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* ====== SOLUTION ====== */
+
+#solution-box {
+    padding: 15px;
+    margin-top: 15px;
+    background: #f1f1f1;
+    border-radius: 10px;
+    text-align: left;
+    font-family: Consolas, monospace;
+    border-left: 5px solid #4CAF50;
+    display: none;
+    color: #222;
+    white-space: pre-wrap;
+}
+
+/* ====== MOBILE ====== */
+
+@media (max-width: 600px) {
+    .app {
+        padding: 22px;
+    }
+
+    button {
+        width: 100%;
+        padding: 14px;
+    }
+
+    .buttons {
+        gap: 12px;
+    }
 }
