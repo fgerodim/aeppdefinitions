@@ -120,7 +120,7 @@ h1 {
     align-items: center;
     gap: 18px;
     margin-top: 10px;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* wrap μόνο αν δεν χωράνε */
 }
 
 button {
@@ -133,15 +133,12 @@ button {
     font-weight: bold;
     cursor: pointer;
     transition: background 0.2s ease, transform 0.1s ease;
+    white-space: nowrap; /* για να μην σπάει το κείμενο */
 }
 
 button:hover {
     background: #0056b3;
     transform: scale(0.97);
-}
-
-.buttons button {
-    margin: 0 8px;
 }
 
 .menu-secondary {
@@ -201,15 +198,12 @@ button:hover {
         gap: 12px;
     }
 
-    button {
-        width: 40%;
-        padding: 14px;
-    }
+    /* δεν κάνουμε width:100% για buttons */
 }
 
 @media (max-width: 400px) {
     .buttons {
-        flex-direction: column;
+        gap: 10px;
     }
 
     .code-content {
