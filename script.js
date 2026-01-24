@@ -30,7 +30,7 @@ homeBtn.className = "menu-secondary";
     };
 
     restartBtn = document.createElement("button");
-    restartBtn.innerHTML = "🔄 Επανέναρξη";
+    restartBtn.innerHTML = "🔄 Επόμενη";
     restartBtn.onclick = function () {
         goNextExercise();
     };
@@ -77,7 +77,7 @@ function render() {
     var ex = exercises[current];
 
     titleEl.innerHTML = ex.title;
-    progressEl.innerHTML = "Άσκηση " + (current + 1) + " / " + exercises.length;
+    //progressEl.innerHTML = "Άσκηση " + (current + 1) + " / " + exercises.length;
 
     feedbackEl.innerHTML = "";
     feedbackEl.className = "";
