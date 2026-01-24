@@ -12,7 +12,7 @@ body {
 /* ====== CONTAINER ====== */
 .app {
     background: white;
-    padding: 30px;
+    padding: 20px; /* Μειωμένο padding για κινητά */
     border-radius: 20px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     text-align: center;
@@ -20,23 +20,26 @@ body {
     max-width: 650px;
     transition: background-color 0.3s ease;
     box-sizing: border-box;
+    margin: 10px;
 }
 
 /* ====== HEADERS ====== */
 h1 { 
     color: #007bff; 
     margin-top: 0; 
+    font-size: 1.8em;
 }
 
 #progress {
     color: #666;
     margin-bottom: 10px;
-    font-size: 0.95em;
+    font-size: 0.9em;
 }
 
 #title {
     color: #333;
     margin-bottom: 15px;
+    font-size: 1.2em;
 }
 
 /* ====== CODE WINDOW ====== */
@@ -46,12 +49,14 @@ h1 {
     padding: 0;
     border-radius: 10px;
     text-align: left;
-    font-family: Consolas, monospace;
+    font-family: 'Consolas', 'Monaco', monospace;
     font-size: 1.05em;
-    line-height: 1.5;
+    line-height: 1.6; /* Αυξημένο line-height για να μην κολλάνε τα inputs */
     margin-bottom: 20px;
     border-left: 5px solid #007bff;
-    overflow-x: auto; /* horizontal scroll */
+    overflow-x: hidden; /* Αποφυγή οριζόντιου scroll στο container */
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .code-header {
@@ -74,9 +79,10 @@ h1 {
 }
 
 .code-content {
-    padding: 20px;
-    white-space: pre-wrap;
-    word-break: break-word; /* για να μην σπάει layout */
+    padding: 15px;
+    white-space: pre-wrap; /* Επιτρέπει την αλλαγή γραμμής */
+    word-break: break-word; /* Σπάει τις μεγάλες λέξεις αν χρειαστεί */
+    overflow-x: auto; /* Επιτρέπει scroll μόνο αν το περιεχόμενο είναι πολύ πλατύ */
 }
 
 /* ====== INPUT GAPS ====== */
@@ -86,15 +92,16 @@ h1 {
     border-bottom: 2px solid #007bff;
     color: #e5c07b;
     font-family: inherit;
-    font-size: inherit;
-    padding: 2px 6px;
-    margin: 0 4px;
+    font-size: 0.95em;
+    padding: 2px 4px;
+    margin: 2px 2px;
     text-align: center;
     border-radius: 5px;
     outline: none;
     display: inline-block;
-    max-width: 100%;
+    max-width: 100%; /* Για να μην βγαίνει ποτέ εκτός οθόνης */
     box-sizing: border-box;
+    vertical-align: middle;
 }
 
 .gap.correct {
@@ -114,42 +121,36 @@ h1 {
 
 /* ====== BUTTONS ====== */
 .buttons {
-    min-height: 80px;
+    min-height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 18px;
+    gap: 12px;
     margin-top: 10px;
     flex-wrap: wrap;
 }
 
 button {
-    padding: 15px 40px;
+    padding: 12px 25px;
     background: #007bff;
     color: white;
     border: none;
     border-radius: 10px;
-    font-size: 1.05em;
+    font-size: 1em;
     font-weight: bold;
     cursor: pointer;
     transition: background 0.2s ease, transform 0.1s ease;
+    flex: 1; /* Τα κουμπιά μεγαλώνουν ισόποσα */
+    min-width: 140px;
 }
 
 button:hover {
     background: #0056b3;
-    transform: scale(0.97);
-}
-
-.buttons button {
-    margin: 0 8px;
+    transform: scale(0.98);
 }
 
 .menu-secondary {
     background: #6c757d;
-}
-
-.menu-secondary:hover {
-    background: #545b62;
 }
 
 /* ====== FEEDBACK / SCORE ====== */
@@ -175,44 +176,33 @@ button:hover {
     background: #f1f1f1;
     border-radius: 10px;
     text-align: left;
-    font-family: Consolas, monospace;
+    font-family: 'Consolas', monospace;
     border-left: 5px solid #4CAF50;
     display: none;
     color: #222;
     white-space: pre-wrap;
+    font-size: 0.9em;
 }
 
 /* ====== MOBILE RESPONSIVE ====== */
 @media (max-width: 600px) {
     .app {
-        padding: 22px;
+        padding: 15px;
+        width: 98%;
     }
 
     .code-content {
-        padding: 12px;
-        font-size: 0.95em;
+        padding: 10px;
+        font-size: 0.85em; /* Μικρότερη γραμματοσειρά για να χωράνε οι εντολές */
+        line-height: 2.2; /* Μεγάλο κενό ανάμεσα στις γραμμές για εύκολο touch */
     }
 
     h1 {
-        font-size: 1.5em;
-    }
-
-    .buttons {
-        gap: 12px;
+        font-size: 1.4em;
     }
 
     button {
         width: 100%;
         padding: 14px;
-    }
-}
-
-@media (max-width: 400px) {
-    .buttons {
-        flex-direction: column;
-    }
-
-    .code-content {
-        font-size: 0.9em;
     }
 }
