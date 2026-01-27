@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Συμπλήρωση Κενών – ΑΕΠΠ</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+    <h1>⌨️ Συμπλήρωση Κενών (ΑΕΠΠ)</h1>
+    <!--div id="progress">Άσκηση 1 / 1</div-->
+
+    <h3 id="title">Φόρτωση...</h3>
+
+    <div class="code-window">
+        <div class="code-header">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="file-name">algorithm.glossa</span>
+        </div>
+        <pre class="code-content" id="code"></pre>
+    </div>
+
+    <div class="buttons">
+        <button id="checkBtn">Έλεγχος</button>
+        <button id="nextBtn" style="display:none">Επόμενο</button>
+    </div>
+
+    <div id="feedback"></div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

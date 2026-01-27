@@ -1,0 +1,212 @@
+/* ====== PAGE ====== */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f4f4f9;
+    box-sizing: border-box;
+}
+
+/* ====== CONTAINER ====== */
+.app {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 95%;
+    max-width: 650px;
+    transition: background-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* ====== HEADERS ====== */
+h1 { 
+    color: #007bff; 
+    margin-top: 0; 
+}
+
+#progress {
+    color: #666;
+    margin-bottom: 10px;
+    font-size: 0.95em;
+}
+
+#title {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* ====== CODE WINDOW ====== */
+.code-window {
+    background: #282c34;
+    color: #abb2bf;
+    border-radius: 10px;
+    text-align: left;
+    font-family: Consolas, monospace;
+    font-size: 1.05em;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    border-left: 5px solid #007bff;
+    overflow-x: auto; /* scroll για μικρές οθόνες */
+}
+
+.code-header {
+    background: #323844;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.dot { width: 12px; height: 12px; border-radius: 50%; }
+.red { background: #ff5f56; }
+.yellow { background: #ffbd2e; }
+.green { background: #27c93f; }
+
+.file-name {
+    color: #aaa;
+    font-size: 12px;
+    margin-left: 10px;
+}
+
+.code-content {
+    padding: 20px;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+/* ====== INPUT GAPS ====== */
+.gap {
+    background: #21252b;
+    border: 1px solid #555;
+    border-bottom: 2px solid #007bff;
+    color: #e5c07b;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 2px 6px;
+    margin: 0 4px;
+    text-align: center;
+    border-radius: 5px;
+    outline: none;
+    display: inline-block;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.gap.correct {
+    background: #1f4033;
+    border-color: #4CAF50;
+}
+
+.gap.wrong {
+    background: #4a1f25;
+    border-color: #f44336;
+}
+
+.gap.locked {
+    pointer-events: none;
+    opacity: 0.95;
+}
+
+/* ====== BUTTONS ====== */
+.buttons {
+    min-height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    margin-top: 10px;
+    flex-wrap: wrap; /* wrap μόνο αν δεν χωράνε */
+}
+
+button {
+    padding: 15px 40px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.05em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
+    white-space: nowrap; /* για να μην σπάει το κείμενο */
+}
+
+button:hover {
+    background: #0056b3;
+    transform: scale(0.97);
+}
+
+.menu-secondary {
+    background: #6c757d;
+}
+
+.menu-secondary:hover {
+    background: #545b62;
+}
+
+/* ====== FEEDBACK / SCORE ====== */
+#feedback {
+    margin-top: 12px;
+    font-weight: bold;
+    min-height: 24px;
+}
+
+.success { color: #4CAF50; }
+.error { color: #f44336; }
+
+#score {
+    margin-top: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* ====== SOLUTION ====== */
+#solution-box {
+    padding: 15px;
+    margin-top: 15px;
+    background: #f1f1f1;
+    border-radius: 10px;
+    text-align: left;
+    font-family: Consolas, monospace;
+    border-left: 5px solid #4CAF50;
+    display: none;
+    color: #222;
+    white-space: pre-wrap;
+}
+
+/* ====== MOBILE RESPONSIVE ====== */
+@media (max-width: 600px) {
+    .app {
+        padding: 22px;
+    }
+
+    .code-content {
+        padding: 12px;
+        font-size: 0.95em;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .buttons {
+        gap: 12px;
+    }
+
+    /* δεν κάνουμε width:100% για buttons */
+}
+
+@media (max-width: 400px) {
+    .buttons {
+        gap: 10px;
+    }
+
+    .code-content {
+        font-size: 0.9em;
+    }
+}

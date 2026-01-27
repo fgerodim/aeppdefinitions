@@ -1,40 +1,121 @@
 <!DOCTYPE html>
 <html lang="el">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Συμπλήρωση Κενών – ΑΕΠΠ</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Εκπαιδευτικές Ασκήσεις στο μάθημα ΑΕΠΠ</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "LearningResource",
+        "name": "Quiz για το μάθημα "Ανάπτυξης Εφαρμογών σε Προγραμματιστικό Περιβάλλον": Σωστό/Λάθος",
+        "description": "Δοκιμάστε τις γνώσεις σας σε ερωτήσεις τύπου Σωστό/Λάθος στο πανελλαδικώς εξεταζόμενο μάθημα της Αναπτυξης Εφαρμογών σε Προγραμματιστικό Περιβάλλον (ΑΕΠΠ).",
+        "learningResourceType": "Quiz",
+        "educationalLevel": "Δευτεροβάθμια/Πανελλαδικές Εξετάσεις",
+        "about": {
+            "@type": "Thing",
+            "name": "Πληροφορική, ΑΕΠΠ, Δομές Δεδομένων, Πίνακες, Αλγόριθμοι, Προγραμματισμός"
+        },
+        "keywords": ["πληροφορική", "αλγόριθμοι", "προγραμματισμός", "quiz", "σωστό λάθος", "ΓΛΩΣΣΑ", "ΑΕΠΠ", "Πανελλαδικές"],
+        "author": {
+            "@type": "Person",
+            "name": "Φάνης Γεροδήμος-ΠΕ86"
+        }
+        }
+    </script>
+    
+    
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0NWXRRP8PH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0NWXRRP8PH');
+</script>
 <body>
 
-<div class="app">
+<main class="menu-container">
 
-    <h1>⌨️ Συμπλήρωση Κενών (ΑΕΠΠ)</h1>
-    <!--div id="progress">Άσκηση 1 / 1</div-->
+  <h1>Ασκήσεις στο μάθημα ΑΕΠΠ</h1>
+  <p>Διάλεξε τον τύπο της άσκησης που θέλεις να λύσεις:</p>
 
-    <h3 id="title">Φόρτωση...</h3>
+  <section class="button-grid">
+    <a href="app2/index.html" class="menu-btn">🎴 Αντιστοίχιση με Κάρτες</a>
+    <a href="app1/index.html" class="menu-btn">📑 Αντιστοίχιση με Λίστα</a>
+    <a href="app3/index.html" class="menu-btn">⚖️ Σωστό ή Λάθος;</a>
+    <a href="app4/index.html" class="menu-btn new-app">🧠 Ιχνηλάτηση Αλγορίθμου</a>
+    <a href="app5/index.html" class="menu-btn new-app">✏️ Συμπλήρωση Κενών</a>
+  </section>
 
-    <div class="code-window">
-        <div class="code-header">
-            <span class="dot red"></span>
-            <span class="dot yellow"></span>
-            <span class="dot green"></span>
-            <span class="file-name">algorithm.glossa</span>
-        </div>
-        <pre class="code-content" id="code"></pre>
-    </div>
+  <!-- Θεωρία κουμπί -->
+  <section class="theory-divider">
+    <button class="theory-toggle" id="openTheoryBtn">📘 Θεωρία & Τυπολόγιο</button>
+  </section>
 
-    <div class="buttons">
-        <button id="checkBtn">Έλεγχος</button>
-        <button id="nextBtn" style="display:none">Επόμενο</button>
-    </div>
+  <hr class="footer-line">
 
-    <div id="feedback"></div>
+  <footer class="footer">
+    <p>Δημιουργός: Φάνης Γεροδήμος-ΠΕ86</p>
+    <p>Επικοινωνία: <a href="mailto:fgerodim@gmail.com">fgerodim@gmail.com</a></p>
+    <p class="cookies">* Ανώνυμα cookies ανάλυσης επισκεψιμότητας.</p>
+  </footer>
 
-</div>
+</main>
 
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-<script src="script.js"></script>
+<!-- Overlay -->
+<div id="overlay" class="overlay"></div>
+
+<!-- Panel Θεωρίας -->
+<aside id="theoryPanel" class="theory-panel" aria-hidden="true">
+
+  <header class="theory-header">
+    <span>📘 Θεωρία & Τυπολόγιο</span>
+    <button id="closeTheoryBtn" aria-label="Κλείσιμο">✖</button>
+  </header>
+
+  <div class="theory-content">
+
+    <a href="theory/typologio.pdf" target="_blank" class="theory-link">🧮 Τυπολόγιο (PDF)</a>
+
+    <hr>
+
+    <strong>Θεωρία ανά κεφάλαιο</strong>
+
+    <a href="theory/kef1.pdf" target="_blank" class="theory-link">📄 Κεφάλαιο 1 – Αλγόριθμοι</a>
+    <a href="theory/kef2.pdf" target="_blank" class="theory-link">📄 Κεφάλαιο 2 – Επιλογή</a>
+    <a href="theory/kef3.pdf" target="_blank" class="theory-link">📄 Κεφάλαιο 3 – Επανάληψη</a>
+    <a href="theory/pinakes.pdf" target="_blank" class="theory-link">📄 Πίνακες</a>
+
+  </div>
+
+</aside>
+
+<script>
+const panel = document.getElementById('theoryPanel');
+const overlay = document.getElementById('overlay');
+const openBtn = document.getElementById('openTheoryBtn');
+const closeBtn = document.getElementById('closeTheoryBtn');
+
+function openPanel() {
+  panel.classList.add('open');
+  overlay.classList.add('show');
+  panel.setAttribute('aria-hidden', 'false');
+}
+
+function closePanel() {
+  panel.classList.remove('open');
+  overlay.classList.remove('show');
+  panel.setAttribute('aria-hidden', 'true');
+}
+
+openBtn.addEventListener('click', openPanel);
+closeBtn.addEventListener('click', closePanel);
+overlay.addEventListener('click', closePanel);
+</script>
+
 </body>
 </html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trace Console - ΑΕΠΠ</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <div id="quiz-container">
+        <h1>💻 Ιχνηλάτηση εκτέλεσης</h1>
+
+        <div id="progress-container">
+            <div id="progress-bar"></div>
+        </div>
+
+        <div id="game-area">
+            <pre id="code-display"></pre>
+            <p id="instruction" class="instruction"></p>
+
+            <input type="text" id="user-input" autocomplete="off" placeholder="Γράψε εδώ...">
+
+            <div id="action-area">
+                <button id="check-btn">✔ Έλεγχος</button>
+                <div id="answer-reveal" style="display:none;">
+                    <p id="result-text"></p>
+                </div>
+            </div>
+        </div>
+
+        <div id="report-buttons" style="display:none;">
+            <a href="../index.html" class="menu-btn secondary">🏠 Αρχική</a>
+            <button id="retry-btn" class="menu-btn secondary">🔄 Νέα Άσκηση</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
